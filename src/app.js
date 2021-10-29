@@ -5,6 +5,7 @@ const hbs = require('hbs');
 const geocode = require('./utils/geocode.js');
 const getWeather = require('./utils/getWeather.js');
 
+const port = process.env.PORT || 4000;
 const app = express();
 
 app.use(express.static(path.join(__dirname, '../public')));
@@ -76,6 +77,6 @@ app.get('*', (req, res) => {
   })
 })
 
-app.listen(4000, () => {
-  console.log('server is running on port 4000')
+app.listen(port, () => {
+  console.log('server is running on port ' + port)
 })
